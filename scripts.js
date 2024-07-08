@@ -1,91 +1,256 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const target = document.querySelector(this.getAttribute('href'));
-        
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Show/hide navigation bar on scroll
-let prevScrollpos = window.pageYOffset;
-
-window.onscroll = function() {
-    const currentScrollPos = window.pageYOffset;
-    
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } else {
-        document.getElementById("navbar").style.top = "-50px";
-    }
-    
-    prevScrollpos = currentScrollPos;
-};
-
-// Dynamic project filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projects = document.querySelectorAll('.project');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const filterValue = button.dataset.filter;
-        
-        projects.forEach(project => {
-            if (filterValue === 'all' || project.classList.contains(filterValue)) {
-                project.style.display = 'block';
-            } else {
-                project.style.display = 'none';
-            }
-        });
-    });
-});
-
-// Form validation for contact section
-const form = document.querySelector('#contact-form');
-const emailInput = document.querySelector('#email');
-
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    if (!isValidEmail(emailInput.value)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-    
-    // Form submission logic here
-    console.log('Form submitted successfully!');
-});
-
-function isValidEmail(email) {
-    // Regular expression for basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+/* General styles */
+body {
+  font-family: "Playfair Display", serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
 }
 
-// Toggle light/dark mode
-const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+/* Navbar styles */
+nav {
+  background: #f0f0f0;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  padding: 10px 0;
+}
 
-toggleSwitch.addEventListener('change', function(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); // Save theme preference to local storage
-    } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light'); // Save theme preference to local storage
-    }    
-});
+nav a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
 
-// Check theme preference from local storage
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Welcome section */
+#welcome-section {
+  text-align: center;
+  padding: 50px 20px;
+  border-bottom: 2px solid #000;
+}
+
+.gia {
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+}
+
+.des {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Projects section */
+#projects {
+  padding: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.pro-cent {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: left;
+}
+
+.project-tile {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #000;
+}
+
+.pro {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.pad {
+  font-size: 18px;
+  text-align: justify;
+}
+
+.line {
+  margin-top: 20px;
+  border-bottom: 2px solid #000;
+}
+
+/* Certificates section */
+#certificates {
+  padding: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.certificate {
+  margin-bottom: 20px;
+}
+
+.cert-title {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.pad {
+  font-size: 18px;
+  text-align: justify;
+}
+
+/* Contact section */
+#contact {
+  padding: 20px;
+  text-align: center;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact ul li {
+  margin: 10px 0;
+}
+
+#contact ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+#contact ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #f0f0f0;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #000;
+  width:100%;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .gia {
+    font-size: 36px;
+  }
+
+  .des {
+    font-size: 18px;
+  }
+
+  .pro-cent {
+    font-size: 30px;
+  }
+
+  .pro {
+    font-size: 20px;
+  }
+
+  .pad {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gia {
+    font-size: 24px;
+  }
+
+  .des {
+    font-size: 14px;
+  }
+
+  .pro-cent {
+    font-size: 24px;
+  }
+
+  .pro {
+    font-size: 18px;
+  }
+
+  .pad {
+    font-size: 14px;
+  }
+}
+/* Contact form styles for newspaper-themed integration */
+.contact-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  font-family: "Playfair Display", Times, serif;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: calc(100% - 20px); /* Adjust width for padding */
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: "Playfair Display", Times, serif;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Playfair Display", Times, serif;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background-color: #45a049;
+}
+
+.contact-form ul {
+  list-style: none;
+  padding: 0;
+  font-family: "Playfair Display", Times, serif;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.contact-form ul li {
+  margin-bottom: 10px;
+}
+
+.contact-form ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contact-form ul li a:hover {
+  text-decoration: underline;
 }
