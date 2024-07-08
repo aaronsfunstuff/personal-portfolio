@@ -1,148 +1,159 @@
-/* Default styles for desktop */
+/* General styles */
 body {
   font-family: "Playfair Display", serif;
-  line-height: 1.6;
+  background-color: #fff;
+  color: #000;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
-
+/* Navbar styles */
 nav {
-  display: flex;
-  justify-content: right;
-  margin-bottom: 20px;
+  background: #f0f0f0;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  padding: 10px 0;
 }
 
 nav a {
-  color: #333;
+  color: #000;
   text-decoration: none;
-  padding: 10px;
+  margin: 0 15px;
+  font-weight: bold;
 }
 
 nav a:hover {
-  background: #555;
-  color: #fff;
+  text-decoration: underline;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 20px;
-}
-
-#main-content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-#main-content .sidebar {
-  width: 30%;
-  background: #f4f4f4;
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#main-content .main {
-  width: 65%;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-footer {
-  background: ;
-  color: #fff;
+/* Welcome section */
+#welcome-section {
   text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-.gia{
- text-align:left;
-  padding-left:200px;
-  font-size:60px;
-}
-.des{
-  text-align:left;
-  padding-left:200px;
-  font-size:25px;
-}
-.pro-cent{
-  text-align:center;
-  font-size:40px;
-}
-.pro{
-  font-size:40px;
-  padding-left:20px;
-}
-.pad{
-  padding-left:20px;
+  padding: 50px 20px;
+  border-bottom: 2px solid #000;
 }
 
-
-.project-tile{
- float:right;
-  width: 50%;
-  height:50%;
-  padding-right:40px;
+.gia {
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
 }
+
+.des {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+/* Projects section */
+#projects {
+  padding: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.pro-cent {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-tile {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #000;
+}
+
+.pro {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.pad {
+  font-size: 18px;
+  text-align: justify;
+  max-width: 600px;
+}
+
+/* Contact section */
+#contact {
+  padding: 20px;
+  text-align: center;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact ul li {
+  margin: 10px 0;
+}
+
+#contact ul li a {
+  text-decoration: none;
+  color: #000;
+}
+
+#contact ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: #f0f0f0;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #000;
+}
+
 /* Media Queries */
-
-/* Tablets */
 @media (max-width: 768px) {
-  #main-content {
-    flex-direction: column;
+  .gia {
+    font-size: 36px;
   }
 
-  #main-content .sidebar,
-  #main-content .main {
-    width: 100%;
-  }
-
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    padding: 15px;
-    text-align: center;
-  }
-}
-/* Mobile Phones */
-@media (max-width: 480px) {
-  header {
-    padding: 10px 0;
-  }
-
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    padding: 10px;
+  .des {
     font-size: 18px;
   }
 
-  #main-content {
-    flex-direction: column;
+  .pro-cent {
+    font-size: 30px;
   }
 
-  #main-content .sidebar,
-  #main-content .main {
-    width: 100%;
-    padding: 10px;
+  .pro {
+    font-size: 20px;
   }
 
-  footer {
-    padding: 5px;
+  .pad {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gia {
+    font-size: 24px;
+  }
+
+  .des {
+    font-size: 14px;
+  }
+
+  .pro-cent {
+    font-size: 24px;
+  }
+
+  .pro {
+    font-size: 18px;
+  }
+
+  .pad {
     font-size: 14px;
   }
 }
