@@ -262,3 +262,14 @@ footer {
 .contact-form ul li a:hover {
   text-decoration: underline;
 }
+.rickroll{
+   border-radius: 50%;
+  width: 200px;
+  max-width: 200px;
+ max-height: 200px;
+  height: auto;
+  object-fit: fill;
+}
+.body{
+    text-align:center;
+}
