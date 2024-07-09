@@ -4,33 +4,85 @@
     <title>Survey Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css"> 
+    <style>
+      body {
+        font-family: 'Raleway', sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #f4f4f4;
+        padding: 20px;
+        line-height: 1.6;
+      }
+      .frog, .rickroll {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+      }
+      h1, h2 {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+      }
+      p {
+        text-indent: 50px;
+        margin: 0 0 20px 0;
+      }
+      .funfacts, .contact-info, .hobbies, .coding-journey {
+        margin-bottom: 40px;
+      }
+      .contact-info p {
+        text-indent: 0;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body class="body">
-    <img src="https://preview.redd.it/im-trying-to-draw-cute-things-recently-because-most-of-the-v0-poirn161zdya1.jpg?width=1080&crop=smart&auto=webp&s=dc03f29f126d05cd64e15f2951b6a71e21624fb2" class="frog"></img>
+    <img src="https://scrapbook.hackclub.com/_next/image?url=https%3A%2F%2Fsecure.gravatar.com%2Favatar%2F2c58dc0e22668901c597553204e48692.jpg%3Fs%3D192%26d%3Dhttps%253A%252F%252Fa.slack-edge.com%252Fdf10d%252Fimg%252Favatars%252Fava_0012-192.png&w=640&q=75" class="frog" alt="Profile Picture">
     <h1>Aaron Lei</h1>
-  <h2>About me</h2>
-  <p>Hi there! I'm Aaron, a 13-year-old coding enthusiast with a passion for technology and creativity. Ever since I wrote my first line of code, I knew I had discovered something truly special. Programming allows me to bring my ideas to life, solve problems, and continuously learn new things. Whether I'm working on a new project or debugging code, I always find excitement in the process.
-
-When I'm not coding, you can often find me enjoying a refreshing cup of boba. There's something about the combination of flavors and the fun of the tapioca pearls that I just can't resist.
-
-As I continue to grow and develop my skills, I aim to create innovative and impactful projects that can make a difference. I look forward to sharing my journey with you and exploring the endless possibilities that the world of coding has to offer.
-
-Feel free to check out my projects and get in touch if you'd like to collaborate or just chat about all things tech (or boba)!</p>
-  <h2>Funfacts about me</h2>
-  <p> •I started coding when I was 8<p>
-   <p> •I love to make fun and simple websites<p>
-   <p> • I love drinking boba<p>
-  <h2>My Hobbies include but is not limited to...</h2>
-  <p> • Video games (valorant)<p>
-  <p> • Drinking boba with friends<p>
-  <p> • And of course Coding <p>
-  <h2>More Contact Info and just links in general</h2>
-  <p></p>
-  <img class="rickroll"src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif"></img>
-<p>Lmao You got rickrolled (does this still look ai generated lol)</p>
+    <h2>About me</h2>
+    <p>Hi there! I'm Aaron, a 13-year-old coding enthusiast with a passion for technology and creativity. Ever since I wrote my first line of code, I knew I had discovered something truly special. Programming allows me to bring my ideas to life, solve problems, and continuously learn new things. Whether I'm working on a new project or debugging code, I always find excitement in the process.</p>
+    <p>When I'm not coding, you can often find me enjoying a refreshing cup of boba. There's something about the combination of flavors and the fun of the tapioca pearls that I just can't resist.</p>
+    <p>As I continue to grow and develop my skills, I aim to create innovative and impactful projects that can make a difference. I look forward to sharing my journey with you and exploring the endless possibilities that the world of coding has to offer.</p>
+    <p>Feel free to check out my projects and get in touch if you'd like to collaborate or just chat about all things tech (or boba)!</p>
+    <h2>Funfacts about me</h2>
+    <div class="funfacts">
+      <p>• I started coding when I was 8</p>
+      <p>• I love to make fun and simple websites</p>
+      <p>• I love drinking boba</p>
+    </div>
+    <h2>How I got into coding</h2>
+    <div class="coding-journey">
+      <p>My journey into coding began when I was 8 years old, thanks to my dad. He suggested that I start learning to code, and I decided to give it a try. My first project was a simple game, and I was instantly hooked. The idea of creating something from scratch, just by typing a few lines of code, fascinated me.</p>
+      <p>With my dad's encouragement, I started exploring different programming languages and online coding platforms, soaking up all the knowledge I could find. What really ignited my passion was when I successfully wrote my first program. It was a small project, but seeing it work gave me a sense of accomplishment and excitement that I had never felt before. From that moment on, I knew coding was something I wanted to dive deeper into.</p>
+      <p>Since then, I’ve been creating various projects, from games to websites, and I love every moment of it. Coding allows me to be creative, solve problems, and constantly learn new things. It's a journey that keeps getting more exciting with every new project I undertake.</p>
+    </div>
+    <h2>My Hobbies include but are not limited to...</h2>
+    <div class="hobbies">
+      <p>• Video games (Valorant)</p>
+      <p>• Drinking boba with friends</p>
+      <p>• And of course Coding</p>
+    </div>
+    <h2>More Contact Info and just links in general</h2>
+    <div class="contact-info">
+      <p>Discord: orange_ramune</p>
+      <p>Phone: Don't wanna share</p>
+      <p>Email: Don't wanna share</p>
+      <p><a href="https://github.com/aaronsfunstuff" target="_blank">GitHub: aaronsfunstuff</a></p>
+      <p><a href="https://scrapbook.hackclub.com/AaronLei" target="_blank">Scrapbook: AaronLei</a></p>
+    </div>
+    <img class="rickroll" src="https://media1.tenor.com/m/x8v1oNUOmg4AAAAd/rickroll-roll.gif" alt="Rickroll">
+    <p>Lmao You got rickrolled (does this still look AI-generated lol)</p>
   </body>
 </html>
